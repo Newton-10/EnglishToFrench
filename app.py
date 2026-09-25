@@ -3,6 +3,18 @@ import numpy as np
 import pickle
 import gradio as gr
 import os
+import urllib.request
+
+MODEL_URL = "https://huggingface.co/Newton-10/en-fr-transformer/resolve/main/transformer_model.keras"
+VOCABS_URL = "https://huggingface.co/Newton-10/en-fr-transformer/resolve/main/vocabs.pkl"
+
+if not os.path.exists('transformer_model.keras'):
+    print("Downloading model...")
+    urllib.request.urlretrieve(MODEL_URL, 'transformer_model.keras')
+
+if not os.path.exists('vocabs.pkl'):
+    print("Downloading vocabs...")
+    urllib.request.urlretrieve(VOCABS_URL, 'vocabs.pkl')
 
 class PositionalEmbedding(tf.keras.layers.Layer):
     def __init__(self, sequence_length, vocab_size, embed_dim, **kwargs):
