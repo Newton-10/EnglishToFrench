@@ -57,7 +57,8 @@ def pos_enc_matrix(L, d, n=10000):
 
 model = tf.keras.models.load_model(
     'transformer_model.keras',
-    custom_objects={'PositionalEmbedding': PositionalEmbedding}
+    custom_objects={'PositionalEmbedding': PositionalEmbedding},
+    compile=False
 )
 
 with open('vocabs.pkl', 'rb') as fp:
