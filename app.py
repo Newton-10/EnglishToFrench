@@ -11,7 +11,7 @@ try:
 except ImportError:
     from tensorflow.lite import Interpreter  # fallback if tflite_runtime unavailable
 
-MODEL_URL = "https://huggingface.co/Newton-10/en-fr-transformer/resolve/main/transformer_model.tflite"
+MODEL_URL = "https://huggingface.co/Newton-10/en-fr-transformer/resolve/main/transformer_model%20(2).tflite"
 VOCABS_URL = "https://huggingface.co/Newton-10/en-fr-transformer/resolve/main/vocabs.pkl"
 
 if not os.path.exists('transformer_model.tflite'):
