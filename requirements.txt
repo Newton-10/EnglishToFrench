@@ -1,3 +1,3 @@
 tflite-runtime
-numpy
+numpy<2
 gradio
